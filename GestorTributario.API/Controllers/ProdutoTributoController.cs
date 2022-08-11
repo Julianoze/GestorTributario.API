@@ -1,4 +1,5 @@
-﻿using GestorTributario.API.AppService.Interfaces;
+﻿using System.Threading.Tasks;
+using GestorTributario.API.AppService.Interfaces;
 using GestorTributario.API.AppService.Models;
 using GestorTributario.API.AppService.Models.Parameters;
 using Microsoft.AspNetCore.Mvc;
@@ -15,9 +16,9 @@ namespace GestorTributario.API.Controllers
         }
 
         [HttpGet("produto/consultar")]
-        public IActionResult Get([FromQuery] ConsultaParametros parametros)
+        public async Task<IActionResult> Get([FromQuery] ConsultaParametros parametros)
         {
-            return Ok(_service.ConsultarTributacaoProduto(parametros));
+            return Ok(await _service.ConsultarTributacaoProduto(parametros));
         }
     }
 }
