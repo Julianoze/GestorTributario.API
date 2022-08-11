@@ -4,8 +4,8 @@
   "description": "Application data mock",
   "scripts": {
     "mock": "concurrently \"npm run imendes\" \"npm run avant\"",
-    "imendes": "json-server ./api-mock/imendes_db.json -p 5003",
-    "avant": "json-server ./api-mock/avant_db.json -p 5004"
+    "imendes": "json-server ./api-mock/imendes_db.json -p 5003 --middlewares singular.js",
+    "avant": "json-server ./api-mock/avant_db.json -p 5004 --middlewares singular.js"
   },
   "keywords": [
     "mock",
