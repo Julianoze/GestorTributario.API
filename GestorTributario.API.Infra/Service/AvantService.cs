@@ -1,4 +1,6 @@
+using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 using GestorTributario.API.AppService.Models.Avant;
 using GestorTributario.API.AppService.Models.Parameters;
 using GestorTributario.API.Infra.Service.Abstract;
@@ -11,10 +13,10 @@ namespace GestorTributario.API.Infra.Service
         {
         }
 
-        public override AvantTributo ConsultarTributacaoProduto(ConsultaParametros parametros)
+        public async override Task<AvantTributo> ConsultarTributacaoProduto(ConsultaParametros parametros)
         {
-            System.Console.WriteLine("Consultou Avant");
-            return null;
+            var uri = new Uri($"{Environment.GetEnvironmentVariable("AVANT_API")}/api/v1/products?id={parametros.CodigoProduto}");
+            return await GetAsync(uri);
         }
     }
 }
