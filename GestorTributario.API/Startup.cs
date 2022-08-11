@@ -35,6 +35,7 @@ namespace GestorTributario.API
 
             services.AddControllers();
             services.AddSwaggerConfiguration();
+            services.AddAutoMapper(typeof(Configurations.MapperConfig));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
