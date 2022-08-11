@@ -1,4 +1,6 @@
+using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 using GestorTributario.API.AppService.Models.Imendes;
 using GestorTributario.API.AppService.Models.Parameters;
 using GestorTributario.API.Infra.Service.Abstract;
@@ -11,10 +13,10 @@ namespace GestorTributario.API.Infra.Service
         {
         }
 
-        public override ImendesTributo ConsultarTributacaoProduto(ConsultaParametros parametros)
+        public async override Task<ImendesTributo> ConsultarTributacaoProduto(ConsultaParametros parametros)
         {
-            System.Console.WriteLine("Consultou Imendes");
-            return null;
+            var uri = new Uri($"{Environment.GetEnvironmentVariable("IMENDES_API")}/api/v1/produtos?id={parametros.CodigoProduto}");
+            return await GetAsync(uri);
         }
     }
 }
