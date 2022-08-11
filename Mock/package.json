@@ -1,0 +1,20 @@
+{
+  "name": "mock",
+  "version": "1.0.0",
+  "description": "Application data mock",
+  "scripts": {
+    "mock": "concurrently \"npm run imendes\" \"npm run avant\"",
+    "imendes": "json-server ./api-mock/imendes_db.json -p 5003",
+    "avant": "json-server ./api-mock/avant_db.json -p 5004"
+  },
+  "keywords": [
+    "mock",
+    "api"
+  ],
+  "author": "Juliano Braz",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.3.0",
+    "json-server": "^0.17.0"
+  }
+}

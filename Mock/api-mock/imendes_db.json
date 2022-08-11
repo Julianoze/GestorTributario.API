@@ -1,0 +1,16 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Product Y",
+      "icms": 18,
+      "cst": "00"
+    },
+    {
+      "id": 2,
+      "nome": "Product Z",
+      "icms": 21,
+      "cst": "00"
+    }
+  ]
+}
