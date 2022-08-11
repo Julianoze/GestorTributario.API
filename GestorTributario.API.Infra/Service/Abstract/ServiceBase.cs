@@ -21,14 +21,9 @@ namespace GestorTributario.API.Infra.Service.Abstract
             var response = await _httpClient.GetAsync(uri);
             var content = await response.Content.ReadAsStringAsync();
 
-            return DeserializeObject(content);
-        }
-
-        protected T DeserializeObject(string content)
-        {
             return JsonSerializer.Deserialize<T>(content);
         }
 
-        public abstract T ConsultarTributacaoProduto(ConsultaParametros parametros);
+        public abstract Task<T> ConsultarTributacaoProduto(ConsultaParametros parametros);
     }
 }
