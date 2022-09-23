@@ -1,3 +1,8 @@
+## Objetivo
+Aplicação modelo, com dois repositórios diferentes que trabalham com dados de tributação do produto.
+Utilizando o AutoMapper converte em um objeto comum e conhecido pela aplicação, facilitando a integração com
+diferentes serviços.
+
 ## Requisitos
 * dotnet, version 5.0.x, runtime
 * Node 14.0 ou superior
